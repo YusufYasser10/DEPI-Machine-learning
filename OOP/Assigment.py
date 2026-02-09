@@ -5,7 +5,6 @@ class ImageEditor:
     def __init__(self, filename):
         self.filename = filename
         try:
-            # Load and convert to grayscale ('L')
             img = Image.open(filename).convert('L')
             img = img.resize((256, 256))
             self.image_matrix = np.array(img)
@@ -43,7 +42,6 @@ class ImageEditor:
 
 # --- Main Execution Block ---
 if __name__ == "__main__":
-    # Change 'cameraman.bmp' to the actual name of an image you have uploaded
     filename = input("Enter image name (e.g. cameraman.bmp): ")
     
     processor = ImageEditor(filename)
